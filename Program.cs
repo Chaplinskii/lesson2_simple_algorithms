@@ -25,35 +25,35 @@
 // -3, -2 => 3
 // 4, -2 => 4
 
-using System.IO.Compression;
+// using System.IO.Compression;
 
-Console.Clear();
-Console.Write("Введите координату X: ");
-int x = int.Parse(Console.ReadLine()!);
-while (x==0){
-    Console.Write("Ошибка! X не должен быть равен 0! \nВведите координату X: ");
-    x = int.Parse(Console.ReadLine()!);
-}
-Console.Write("Введите координату Y: ");
-int y = int.Parse(Console.ReadLine()!);
-int z=0;
-while (y==0){
-    Console.Write("Ошибка! Y не долженбыть равен 0! \nВведите координату Y: ");
-    y = int.Parse(Console.ReadLine()!);
-}
-if (x>0 && y>0){
-    z=1;
-}
-else if (x<0 && y>0){
-    z=2;
-}
-else if (x<0 && y<0){
-    z=3;
-}
-else if (x>0 && y<0){
-    z=4;
-}
-Console.WriteLine($"При координатах точки X={x} и Y={y} она относится к {z}-ой координатной четверти плоскости!");
+// Console.Clear();
+// Console.Write("Введите координату X: ");
+// int x = int.Parse(Console.ReadLine()!);
+// while (x==0){
+//     Console.Write("Ошибка! X не должен быть равен 0! \nВведите координату X: ");
+//     x = int.Parse(Console.ReadLine()!);
+// }
+// Console.Write("Введите координату Y: ");
+// int y = int.Parse(Console.ReadLine()!);
+// int z=0;
+// while (y==0){
+//     Console.Write("Ошибка! Y не долженбыть равен 0! \nВведите координату Y: ");
+//     y = int.Parse(Console.ReadLine()!);
+// }
+// if (x>0 && y>0){
+//     z=1;
+// }
+// else if (x<0 && y>0){
+//     z=2;
+// }
+// else if (x<0 && y<0){
+//     z=3;
+// }
+// else if (x>0 && y<0){
+//     z=4;
+// }
+// Console.WriteLine($"При координатах точки X={x} и Y={y} она относится к {z}-ой координатной четверти плоскости!");
 
 // Задача 3: Напишите программу, которая принимает
 // на вход целое число из отрезка [10, 99] и показывает
@@ -62,6 +62,21 @@ Console.WriteLine($"При координатах точки X={x} и Y={y} он
 // 96 => 9
 // 72 => 7
 
+Console.Clear();
+Console.Write("Введите целое число от 10 до 99: ");
+int x = int.Parse(Console.ReadLine()!);
+while (x<10||x>99){
+    Console.Write("Ошибка! Введенное число не входит в заданный отрезак! \nВведите целое число от 10 до 99: ");
+    x = int.Parse(Console.ReadLine()!);
+}
+int x1=x/10;
+int x2=x%10;
+if (x1>x2){
+    Console.WriteLine($"{x1}");
+}
+else {
+    Console.WriteLine($"{x2}");
+}
 // Задача 4: Напишите программу, которая на вход
 // принимает натуральное число N, а на выходе
 // показывает его цифры через запятую.

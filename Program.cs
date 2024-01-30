@@ -62,24 +62,45 @@
 // 96 => 9
 // 72 => 7
 
-Console.Clear();
-Console.Write("Введите целое число от 10 до 99: ");
-int x = int.Parse(Console.ReadLine()!);
-while (x<10||x>99){
-    Console.Write("Ошибка! Введенное число не входит в заданный отрезак! \nВведите целое число от 10 до 99: ");
-    x = int.Parse(Console.ReadLine()!);
-}
-int x1=x/10;
-int x2=x%10;
-if (x1>x2){
-    Console.WriteLine($"{x1}");
-}
-else {
-    Console.WriteLine($"{x2}");
-}
+// Console.Clear();
+// Console.Write("Введите целое число от 10 до 99: ");
+// int x = int.Parse(Console.ReadLine()!);
+// while (x<10||x>99){
+//     Console.Write("Ошибка! Введенное число не входит в заданный отрезак! \nВведите целое число от 10 до 99: ");
+//     x = int.Parse(Console.ReadLine()!);
+// }
+// int x1=x/10;
+// int x2=x%10;
+// if (x1>x2){
+//     Console.WriteLine($"{x1}");
+// }
+// else {
+//     Console.WriteLine($"{x2}");
+// }
+
 // Задача 4: Напишите программу, которая на вход
 // принимает натуральное число N, а на выходе
 // показывает его цифры через запятую.
 // 568 => 5,6,8
 // 8 => 8
 // 9542 => 9,5,4,2
+
+Console.Clear();
+Console.Write("Введите натуральное число: ");
+int x = int.Parse(Console.ReadLine()!);
+int y = x.ToString().Length;
+int result = 0;
+while (x > 0)
+            {
+                result *= 10;
+                result += x % 10;
+                x /= 10;
+            }
+ 
+            for (int i = 0; i < y; i++)
+            {
+                Console.Write(result%10+ ",");
+                result /= 10;
+            }
+ 
+        
